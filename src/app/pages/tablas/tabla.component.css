@@ -1,0 +1,123 @@
+.container__tabla-posiciones{
+    display: flex;
+    width: 90%;
+    padding: 30px 0;
+    margin: 30px auto;
+    border-radius: 30px;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: var(--color-white);
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+}
+
+.txt__title-tabla{
+    font-size: 2.4rem;
+    font-weight: 600;
+    color: var(--color-black-50);
+}
+
+.tabla__posiciones{
+    display: flex;
+    width: 70%;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    /* background-color: var(--color-white); */
+    /* box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1); */
+}
+.tabla__goleadores{
+    display: flex;
+    width: 70%;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    /* background-color: var(--color-white); */
+    /* box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1); */
+}
+/* Table Styles */
+
+.table-wrapper{
+    margin: 10px 10px 10px;;
+}
+
+.fl-table {
+    box-shadow: 0px 10px 30px rgba( 0, 0, 0, 0.2 );
+    border-radius: 5px;
+    font-weight: normal;
+    border: none;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 100%;
+    white-space: nowrap;
+    background-color: white;
+}
+
+.fl-table td, .fl-table th {
+    text-align: left;
+    padding: 8px;
+    font-size: 1.2rem;
+}
+
+.fl-table td {
+    border-right: 1px solid #f8f8f8;
+    font-size: 1.4rem;
+}
+
+.fl-table thead th {
+    color: #ffffff;
+    background: var(--color-black-50);
+}
+
+
+.fl-table thead th:nth-child(odd) {
+    color: #ffffff;
+    background: var(--color-black-50);
+}
+
+.fl-table tr:nth-child(even) {
+    background: #F8F8F8;
+}
+
+.fl-table #header__active{
+    background: var(--color-orange);
+}
+
+.fl-table #body__active{
+    background: var(--color-neutral-80);
+    color: var(--color-white);
+    text-align: center;
+}
+
+@media screen and (max-width: 768px){
+    .container__tabla-posiciones{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        width: 95%;
+    }
+
+    .table-wrapper{
+        overflow-x: scroll;
+        margin: 10px 0px 30px;
+        width: 100%;   
+    }
+    .fl-table{
+        white-space: inherit;
+
+    }
+    .fl-table td, .fl-table th {
+        font-size: 1.4rem;
+    }
+    .fl-table td {
+        font-size: 1.2rem;
+    }
+    .tabla__posiciones{
+        align-items: normal;
+    }
+    .txt__title-tabla{
+        text-align: center;
+    }
+}

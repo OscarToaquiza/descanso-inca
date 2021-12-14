@@ -1,0 +1,25 @@
+<div *ngIf="!arrayCategorias" style="align-items: center;" >
+    <div class="loader"></div>
+    <br>
+    <h1 class="txt__loader" style="font-size: x-large;" >CARGANDO</h1>
+</div>
+<h3 class="txt__subtitle">Seleccione una categoría</h3>
+<section class="container__equipo-detalle">
+
+    <section  *ngIf="arrayCategorias" class="categorias__container">
+
+        <div *ngFor="let categoria of arrayCategorias" class="categoria__section">
+            <h2>{{categoria.nombre_categoria}}</h2>
+            <hr>
+            <p class="categoria__observacion">{{categoria.observacion_categoria}}</p>
+            <p>Equipos participantes</p>
+            <div class="content__number-equipos-participantes">
+                <p>{{categoria.n_equipos_categoria}}</p>
+            </div>
+            <div class="button__ver-calendario">
+                <h3 [routerLink]="['/calendario', categoria._id]"  >Ver Calendario</h3>
+            </div>
+        </div>
+    </section>
+
+</section>

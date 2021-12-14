@@ -1,0 +1,88 @@
+<section *ngIf="!fechaSeleccionada" class="partidos__container-section" style="align-items: center;" >
+    <div class="loader"></div>
+    <br>
+    <h1 style="font-size: x-large;" >CARGANDO</h1>
+</section>
+<h3 class="txt__subtitle" style="text-align: center;" >1er Campeonato de Fútbol - El descanso del inca</h3>
+<section *ngIf="fechaSeleccionada" class="partidos__container-section">
+    <div class="button__categoria-container">
+        <div *ngFor="let categoria of arrayCategorias" class="button__categoria "
+            [ngClass]="{'button__categoria-active': categoria._id === idCategoriaSeleccionada}"
+            (click)="cargarPartidos(categoria._id)">
+            <h3>{{categoria.nombre_categoria}}</h3>
+        </div>
+    </div>
+    <h4>PRÓXIMA FECHA {{fechaSeleccionada.fecha.n_fecha + 1}}</h4>
+    <div class="partidos__container">
+        <div *ngFor="let partido of fechaSeleccionada.partidos" class="partido">
+            <div class="partido__equipos-container">
+                <div class="partido__equipo">
+                    <img *ngIf="partido.id_equipo1.escudo_equipo"
+                        [src]="partido.id_equipo1.escudo_equipo | imagen: 'equipo'">
+                    <p>{{partido.id_equipo1.nombre_equipo}}</p>
+                </div>
+                <div class="partido__resultado">
+                    <h3>* - *</h3>
+                    <strong class="partido__vs">vs</strong>
+                </div>
+                <div class="partido__equipo">
+                    <img *ngIf="partido.id_equipo2.escudo_equipo"
+                        [src]="partido.id_equipo2.escudo_equipo | imagen: 'equipo'">
+                    <p>{{partido.id_equipo2.nombre_equipo}}</p>
+                </div>
+            </div>
+
+            <div class="partido__info">
+                <p>{{partido.fecha_partido | date: 'EEEE d MMM y' }} - {{partido.hora_partido}}</p>
+                <p>{{partido.id_estadio_partido.nombre_estadio}} </p>
+            </div>
+        </div>
+    </div>
+</section>
+<h3 class="txt__subtitle">Categorías participantes</h3>
+<section *ngIf="!arrayCategorias" class="partidos__container-section" style="align-items: center;" >
+    <div class="loader"></div>
+    <br>
+    <h1 style="font-size: x-large;" >CARGANDO</h1>
+</section>
+<section  *ngIf="arrayCategorias" class="categorias__container">
+
+    <div *ngFor="let categoria of arrayCategorias" class="categoria__section">
+        <h2>{{categoria.nombre_categoria}}</h2>
+        <hr>
+        <p class="categoria__observacion">{{categoria.observacion_categoria}}</p>
+        <p>Equipos participantes</p>
+        <div class="content__number-equipos-participantes">
+            <p>{{categoria.n_equipos_categoria}}</p>
+        </div>
+        <div class="button__tabla-posiciones">
+            <h3 [routerLink]="['/tablas', categoria._id]" >Tabla de posiciones</h3>
+        </div>
+        <div class="button__ver-calendario">
+            <h3  [routerLink]="['/calendario', categoria._id]" >Ver Calendario</h3>
+        </div>
+    </div>
+</section>
+<!-- <h3 class="txt__subtitle">Publicidad</h3>
+<section class="container__publicidad">
+    <div class="publicidad__item">
+        <img src="./assets/images/publicidad1.png" alt="">
+        <a href="" class="publicidad__text-link">MegaSpped</a>
+        <p>Internet Banda Ancha en tu Hogar o Empresa</p>
+        <p class="publicidad__txt-number">0986568748 - 0987563215</p>
+    </div>
+    <hr>
+    <div class="publicidad__item">
+        <img src="./assets/images/publicidad2.png" alt="">
+        <a href="" class="publicidad__text-link">Asociación Tungurahua</a>
+        <p>Coperativa de Ahorro y Crédito</p>
+        <p class="publicidad__txt-number">0986568748 - 0987563215</p>
+    </div>
+    <hr>
+    <div class="publicidad__item">
+        <img src="./assets/images/publicidad1.png" alt="">
+        <a href="" class="publicidad__text-link">MegaSpped</a>
+        <p>Internet Banda Ancha en tu Hogar o Empresa</p>
+        <p class="publicidad__txt-number">0986568748 - 0987563215</p>
+    </div>
+</section> -->

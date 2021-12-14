@@ -1,0 +1,64 @@
+<div *ngIf="!tablaGoleadores && !tablaPosiciones">
+    <div class="loader"></div>
+    <h1 class="txt__loader"  style="font-size: x-large;" >CARGANDO</h1>
+</div>
+<section  *ngIf="tablaGoleadores && tablaPosiciones" class="container__tabla-posiciones">
+  <section  class="tabla__posiciones table-wrapper">
+      <h1 class="txt__title-tabla">Tabla de posiciones</h1>
+        <table class="fl-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Equipo</th>
+                <th>PJ</th>
+                <th>PG</th>
+                <th>PE</th>
+                <th>PP</th>
+                <th>GF</th>
+                <th>GC</th>
+                <th>GD</th>
+                <th id="header__active">PTS</th>
+                <th>SC</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let equipo of tablaPosiciones.codigo_equipo; let k = index">
+                <th>{{k+1}}</th>
+                <td>{{equipo.nombre_equipo}}</td>
+                <td>{{equipo.PJ}}</td>
+                <td>{{equipo.PG}}</td>
+                <td>{{equipo.PE}}</td>
+                <td>{{equipo.PP}}</td>
+                <td>{{equipo.GF}}</td>
+                <td>{{equipo.GC}}</td>
+                <td>{{equipo.GD}}</td>
+                <th id="body__active">{{equipo.PTS}}</th>
+                <td>{{equipo.PSC}}</td>
+              </tr>
+            </tbody>
+          </table>
+    </section>
+    <section class="tabla__goleadores table-wrapper">
+      <h1 class="txt__title-tabla">Tabla de Goleadores</h1>
+          <table class="fl-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Equipo</th>
+                <!-- <th>Apellidos</th> -->
+                <th>Nombres</th>
+                <th id="header__active">Goles</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let jugador of tablaGoleadores.goles; let i=index">
+                <td >{{(i+1)}}</td>
+                <td>{{jugador.nombre_equipo}}</td>
+                <td>{{jugador.apellido_jugador }} {{jugador.nombre_jugador}}</td>
+                <!-- <td>{{jugador.nombre_jugador}}</td> -->
+                <td id="body__active">{{jugador.total_goles}}</td>
+              </tr>
+            </tbody>
+          </table>
+    </section>
+</section>

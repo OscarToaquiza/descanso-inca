@@ -1,0 +1,12 @@
+<div *ngIf="!equipos" style="align-items: center;" >
+    <div class="loader"></div>
+    <br>
+    <h1 class="txt__loader" style="font-size: x-large;" >CARGANDO</h1>
+</div>
+<section *ngIf="equipos" class="equipos__container">
+    <div *ngFor="let equipo of equipos"  class="equipo">
+        <h1 class="equipo__title">{{equipo.nombre_equipo}}</h1>
+        <img class="equipo__img" *ngIf="equipo.escudo_equipo" [src]="equipo.escudo_equipo | imagen: 'equipo'" >
+        <button [routerLink]="['/equipo', equipo._id]" class="equipo__button">Ver detalles</button>
+    </div>
+</section>

@@ -1,0 +1,45 @@
+<section *ngIf="!fechaGeneral" class="container__equipo-detalle" style="align-items: center;" >
+    <div class="loader"></div>
+    <br>
+    <h1 class="txt__loader" style="font-size: x-large; margin: 0 auto;" >CARGANDO</h1>
+</section>
+<section *ngIf="fechaGeneral" class="container__calendario">
+    <h2>CALENDARIO DE JUEGOS</h2>
+    <div class="table-wrapper">
+        <table  class="fl-table">
+            <thead style="border: 2px solid; border-color: #8b8b8b;" >
+                <tr>
+                    <th>#Fecha</th>
+                    <th>Equipo Local</th>
+                    <th>Equipo Visitante</th>
+                    <th>Vocal</th>
+                    <th>Fecha</th>
+                    <th>Hora</th>
+                    <th>Estadio</th>
+                    <th>Detalle</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let fecha of fechaGeneral; let i = index" style="border: 2px solid; border-color: #8b8b8b;" >
+                <tr *ngFor="let partido of fecha.Partido;" >
+                    <td>{{i+1}}</td>
+                    <td>{{partido.id_equipo1.nombre_equipo}}</td>
+                    <td>{{partido.id_equipo2.nombre_equipo}}</td>
+                    <td>{{partido.nombre_equipo_vocalia}}</td>
+                    <td>{{partido.fecha_partido | date: 'EEEE d MMM y' }}</td>
+                    <td>{{partido.hora_partido}}</td>
+                    <td>{{partido.id_estadio_partido.nombre_estadio}}</td>
+                    <td>
+                        <div *ngIf="partido.estado_partido" class="button__ver-calendario"
+                            [routerLink]="['/calendario/partido', partido._id]"
+                        >
+                            <h3 >VER</h3>
+                        </div>
+                        <div *ngIf="!partido.estado_partido" class="button__ver-calendario_off">
+                            <h3>VER</h3>
+                        </div>
+                    </td>
+                </tr>
+            <tbody>
+        </table>
+    </div>
+</section>

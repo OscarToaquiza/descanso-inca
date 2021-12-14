@@ -1,0 +1,27 @@
+<section *ngIf="equipo" class="container__equipo-detalle">
+    <h1>{{equipo.nombre_equipo}}</h1>
+    <img class="equipo__img" src="./../../../assets/images/logo-general.png" alt="">
+    <!-- <div class="texto__equipo-detalle">
+        <p>{{equipo.descripcion}}</p>
+        
+    </div> -->
+    <h2>TABLA DE JUGADORES</h2>
+    <div class="table-wrapper">
+        <table class="fl-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Nombres</th>
+                    <th>Apellidos</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let jugador of equipo.personal_equipo; let i = index">
+                    <td>{{i+1}}</td>
+                    <td>{{jugador.nombre_jugador}}</td>
+                    <td>{{jugador.apellido_jugador}}</td>
+                </tr>
+            <tbody>
+        </table>
+    </div>
+</section>

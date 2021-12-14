@@ -1,0 +1,30 @@
+.container__reglamento{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    padding: 10px;
+    margin: 20px auto;
+    border-radius: 30px;
+    background-color: var(--color-white);
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+}
+.container__reglamento h1{
+    font-size: 2.4rem;
+    color: var(--color-black-50);
+    font-weight: 500;
+    margin: 20px 0;
+    text-align: center;
+}
+.container__reglamento embed{
+    width: 100%;
+    height: 800px;
+}
+/* Responsive */
+@media screen and (max-width: 768px){
+    .container__reglamento{
+        width: 90%;
+    }
+}

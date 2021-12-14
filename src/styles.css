@@ -1,0 +1,81 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    --color-black: #212832;
+    --color-black-50: #3B3E47;
+    --color-orange: #FD7014;
+    --color-white: #EDEDED;
+    --color-neutral-60: #64748B;
+    --color-neutral-80: #8B8B8B;
+    font-size: 62.5%;
+    font-family: 'Inter', sans-serif;
+}
+body{
+    background-color: var(--color-white);
+    background-image: url('./assets/images/soccer-ball-png.png');
+    background-size: 50px;
+    width: 100%;
+}
+
+/* Swipper */
+.swiper {
+    /* width: 100%;
+    height: 100%; */
+    background-color: #212832;
+  }
+.swiper-wrapper{
+    /* padding: 3px; */
+    width: 100px;
+}
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .swiper-slide img {
+    display: block;
+    /* width: 30%;
+    height: 30%; */
+    object-fit: contain;
+    border-radius: 100px;
+}
+.swiper-slide h2{
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: var(--color-neutral-60);
+}
+
+/* slider */
+/*loader*/
+.loader {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #ca5100;
+    border-bottom: 16px solid #ca5100;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+    margin: 0 auto;
+  }
+  .txt__loader{
+    text-align: center;
+    margin-top: 10px;
+  }

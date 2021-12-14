@@ -1,0 +1,89 @@
+<section *ngIf="!partido" class="container__equipo-detalle" style="align-items: center;">
+  <div class="loader"></div>
+  <br>
+  <h1 class="txt__loader" style="font-size: x-large; margin: 0 auto;">CARGANDO</h1>
+</section>
+<section *ngIf="partido" class="container__detalle-partido">
+  <h3>Resultado</h3>
+  <div class="resultado__container">
+    <div class="equipo-container">
+      <div class="equipo__1-nombre-gol">
+        <img src="./assets/images/logo-general.png" alt="Equipo">
+      </div>
+      <h2>{{partido.id_equipo1.nombre_equipo}}</h2>
+    </div>
+    <div class="resultado__container-marcador">
+      <h1>{{partido.goles_equipo1.length}} : {{partido.goles_equipo2.length}}</h1>
+    </div>
+
+    <div class="equipo-container">
+      <div class="equipo__1-nombre-gol">
+        <img src="./assets/images/logo-general.png" alt="Equipo">
+      </div>
+      <h2>{{partido.id_equipo2.nombre_equipo}}</h2>
+    </div>
+  </div>
+  <h3>Goles</h3>
+  <div class="detalle__container">
+    <div class="goles-container">
+      <div class="text_goleador" *ngFor="let jugador of partido.goles_equipo1">
+        <span>{{jugador.apellido_jugador}} {{jugador.nombre_jugador}}</span>
+        <img src="../../../../assets/images/ball.png" alt="">
+      </div>
+
+      <div class="text_tarjetas" *ngIf="partido.tarjetas_amarilla_equipo1.length!=0">
+        <h1>Tarjetas Amarillas</h1>
+        <div  class="text__tarjetas-container" *ngFor="let jugador of partido.tarjetas_amarilla_equipo1">
+          <span class="txt_tarjetas-jugador">{{jugador.apellido_jugador}} {{jugador.nombre_jugador}}</span>
+          <img src="../../../../assets/images/tarjeta-amarilla.png" alt="">
+        </div>
+      </div>
+
+      <div class="text_tarjetas" *ngIf="partido.tarjetas_roja_equipo1.length!=0">
+        <h1>Tarjetas Rojas</h1>
+        <div class="text__tarjetas-container" *ngFor="let jugador of partido.tarjetas_roja_equipo1">
+          <span class="txt_tarjetas-jugador">{{jugador.id.apellido_jugador}} {{jugador.id.nombre_jugador}}</span>
+          <img src="../../../../assets/images/tarjeta-roja.png" alt="">
+        </div>
+      </div>
+    </div>
+    <!-- <div class="vertical-line" style="height: 250px;"></div> -->
+    <!-- <hr width="0.5" size="250"class="goles-container-linea"> -->
+    <div class="goles-container">
+      <div class="text_goleador" *ngFor="let jugador of partido.goles_equipo2">
+        <span>{{jugador.apellido_jugador}} {{jugador.nombre_jugador}}</span>
+        <img src="../../../../assets/images/ball.png" alt="">
+      </div>
+
+      <div class="text_tarjetas" *ngIf="partido.tarjetas_amarilla_equipo2.length!=0">
+        <h1>Tarjetas Amarillas</h1>
+        <div  class="text__tarjetas-container" *ngFor="let jugador of partido.tarjetas_amarilla_equipo2">
+          <span class="txt_tarjetas-jugador">{{jugador.apellido_jugador}} {{jugador.nombre_jugador}}</span>
+          <img src="../../../../assets/images/tarjeta-amarilla.png" alt="">
+        </div>
+      </div>
+
+      <div class="text_tarjetas" *ngIf="partido.tarjetas_roja_equipo2.length!=0">
+        <h1>Tarjetas Rojas</h1>
+        <div  class="text__tarjetas-container" *ngFor="let jugador of partido.tarjetas_roja_equipo2">
+          <span class="txt_tarjetas-jugador">{{jugador.id.apellido_jugador}} {{jugador.id.nombre_jugador}}</span>
+          <img src="../../../../assets/images/tarjeta-roja.png" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+  <h3>Partido finalizado</h3>
+  <div class="detalle__container">
+    <div class="partido__finalizado-container">
+      <div class="partido__finalizado-datos">
+          <img src="./../../../../assets/images/date.png" alt="">
+          <h2>Fecha: {{partido.fecha_partido}} | {{partido.hora_partido}}</h2>
+        </div>
+        <div class="partido__finalizado-datos">
+          <img src="./../../../../assets/images/cancha.png" alt="">
+          <h2>Estadio: {{partido.id_estadio_partido.nombre_estadio}}</h2>
+      </div>
+    </div>
+  </div>
+
+</section>

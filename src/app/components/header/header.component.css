@@ -1,0 +1,76 @@
+
+header {
+    width: 100%;
+    padding: 5px;
+    background: var(--color-black);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-white);
+    font-size: 3rem;
+    font-family: oswald;
+  }
+  .logo__organizador{
+      width: 200px;
+  }
+  
+  nav ul {
+    background: var(--color-black-50);
+    text-align: center;
+    list-style: none;
+    overflow: hidden;
+  
+  }
+  
+  ul li {
+    display: inline-block;
+    padding: 20px;
+    transition: all ease-in-out 250ms;
+  }
+  
+  ul li:hover {
+    background: var(--color-orange);
+  }
+  .active {
+    background: var(--color-orange);
+  }
+  
+  ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    display: block;
+    width: 100%;
+  }
+
+  .hide {
+    padding: 16px;
+    font-size: 22px;
+    background: #112d4e;
+    color: white;
+    cursor: pointer;
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    ul li {
+      width: 100%;
+      padding: 15px 30px;
+      text-align: left;
+    }
+  
+    .hide {
+      display: flex;
+      padding-left: 30px;
+      background: var(--color-black-50);
+      align-items: center;
+    }
+  
+    .menu__container{
+        display: none;
+        }
+
+    .img__menu-hamburguesa{
+        margin-right: 20px;
+    }
+  }

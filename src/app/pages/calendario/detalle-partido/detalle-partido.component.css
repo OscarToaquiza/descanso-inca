@@ -1,0 +1,229 @@
+.container__detalle-partido{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    padding: 10px;
+    margin: 20px auto;
+    border-radius: 30px;
+    background-color: var(--color-white);
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+    gap: 20px;
+}
+.container__detalle-partido h3{
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: var(--color-black);
+}
+.detalles__container{
+    display: flex;
+    background-color: var(--color-black-50);
+    width: 80%;
+    color: var(--color-white);
+    padding: 20px;
+    border-radius: 30px;
+    justify-content: space-evenly;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+}
+.equipo__1-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    font-size: 1.5rem;
+}
+.equipo__1-nombre-gol{
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 2.6rem;
+    width: 100%;
+    align-items: center;
+}
+.equipo__1-nombre-gol p{
+    font-weight: bold;
+    font-size: 2.8rem;
+    color: var(--color-orange);
+}
+.equipo1__jugadores{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    font-size: 2rem;
+}
+.equipo__1-nombre-gol img{
+    width: 20%;
+}
+.equipo1__jugadores li{
+    text-decoration: none;
+}
+
+/*Estilos nuevos*/
+.resultado__container{
+    display: flex;
+    background-color: var(--color-black-50);
+    width: 80%;
+    color: var(--color-white);
+    padding: 20px;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+}
+.resultado__container-marcador{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.resultado__container-marcador h1{
+    font-size: 4rem;
+    color: var(--color-orange);
+}
+
+.equipo-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    font-size: 2.5rem;
+}
+.equipo-container h2{
+    text-align: center;
+}
+.detalle__container{
+    display: flex;
+    background-color: var(--color-black-50);
+    width: 80%;
+    color: var(--color-white);
+    padding: 20px;
+    border-radius: 10px;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+
+.goles-container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 10px;
+}
+
+.goles-container-linea{
+    margin: auto 0;
+}
+.text_goleador{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+}
+.text_goleador span{
+    font-size: 1.4rem;
+    text-align: center;
+}
+.text_goleador img{
+    width: 10%;
+}
+
+.text_tarjetas{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+.text_tarjetas h1 {
+    font-size: 1.5rem;
+    color: var(--color-orange);
+}
+.txt_tarjetas-jugador{
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+.text__tarjetas-container{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    
+}
+
+.partido__finalizado-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 70%;
+    /* font-size: 2.5rem; */
+}
+.partido__finalizado-datos{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 10px;
+}
+.partido__finalizado-datos img{
+    width: 7%;
+}
+.partido__finalizado-datos h2{
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+.vertical-line{
+    width: 0px; /* Use only border style */
+    height: 100%;
+    float: left; 
+    border: 1px inset; /* This is default border style for <hr> tag */
+  }
+/* Responsive */
+@media screen and (max-width: 768px){
+
+    .resultado__container{
+        width: 98%;
+        padding: 10px;
+        border-radius: 10px;
+    }
+    .resultado__container-marcador{
+        width: 400%;
+    }
+    .resultado__container-marcador h1{
+        font-size: 3rem;
+    }
+    .equipo-container h2{
+        font-size: 1.2rem;
+    }
+    .equipo__1-nombre-gol img{
+        width: 30%;
+    }
+    .detalle__container{
+        width: 95%;
+        border-radius: 10px;
+    }
+    .text_goleador{
+        padding: 5px;
+        justify-content: flex-start;
+        gap: 5px;
+    }
+    .text_goleador span{
+        font-size: 1.4rem;
+
+    }
+    .text_goleador img{
+        width: 20%;
+    }
+    .partido__finalizado-container{
+        width: 95%;
+    }
+    .partido__finalizado-datos img{
+        width: 10%;
+    }
+}

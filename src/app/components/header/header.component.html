@@ -1,0 +1,19 @@
+<header>
+    <img src="./assets/images/logo-descanso-inca.png" alt="" class="logo__organizador">
+  </header>
+  
+  <div class="hide" (click)="ShowHideButton()">
+      <img class="img__menu-hamburguesa" src="./assets/images/whh_menu.svg" alt="">
+      Menu
+  </div>
+  <nav>
+    <ul *ngIf="showMainContent" class="menu__container"
+    [ngStyle]="{'display': showMainContent ? 'block' : 'none' }">
+      <li routerLinkActive="active"><a routerLink="home"  class="menu">Inicio</a></li>
+      <li routerLinkActive="active"><a routerLink="calendario" class="menu">Calendario</a></li>
+      <li routerLinkActive="active"><a routerLink="equipo" class="menu">Equipos</a></li>
+      <li routerLinkActive="active"><a routerLink="reglamento" class="menu">Reglamento</a></li>
+      <li routerLinkActive="active"><a routerLink="cancha" class="menu">Canchas</a></li>
+      <!-- <li><a routerLink="info" routerLinkActive="active" class="menu">Info</a></li> -->
+    </ul>
+  </nav>

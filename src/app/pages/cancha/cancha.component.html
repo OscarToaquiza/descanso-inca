@@ -1,0 +1,16 @@
+<div *ngIf="!estadios">
+    <div class="loader"></div>
+    <h1 class="txt__loader" style="font-size: x-large;" >CARGANDO</h1>
+</div>
+<section class="container__cancha">
+    <section  *ngIf="estadios" class="estadio__section">
+        <div *ngFor="let estadio of estadios" class="estadios__container">
+            <h2>"{{estadio.nombre_estadio}}"</h2>
+            <hr>
+            <p>Dirección y referencias:</p>
+            <p class="estadio__direccion-estadio">{{estadio.direccion_estadio}}</p>
+            <a class="button__ver-estadio" target="__blank" href={{estadio.ruta_estadio}}>¿Cómo llegar?</a>
+        </div>
+        <img class="img__estadio" src="./assets/images/estadio_descanso_inca.jpeg" alt="">
+    </section>
+</section>
