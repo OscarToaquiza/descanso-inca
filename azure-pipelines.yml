@@ -24,4 +24,4 @@ steps:
   inputs:
     app_location: '/'
     output_location: '/dist/descanso-inca'
-    azure_static_web_apps_api_token: 'c0dfb98ba467534241d9d93de9653613e51a947877b831cfed91aaa23fc53b600-c5059a81-8a5a-4730-81f8-adf43350abf301048887'
+    azure_static_web_apps_api_token: $(token-web-static)
