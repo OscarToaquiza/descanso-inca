@@ -23,4 +23,5 @@ steps:
 - task: AzureStaticWebApp@0
   inputs:
     app_location: '/'
-    azure_static_web_apps_api_token: '5721615d9c2091ace6e60ca04b8e5190b21c30d73cfe2e43ee130aea3c2381d10-d91ef68a-750b-4c3e-acb5-fe531aca686f01048887'
+    output_location: '/dist/descanso-inca'
+    azure_static_web_apps_api_token: 'c0dfb98ba467534241d9d93de9653613e51a947877b831cfed91aaa23fc53b600-c5059a81-8a5a-4730-81f8-adf43350abf301048887'
