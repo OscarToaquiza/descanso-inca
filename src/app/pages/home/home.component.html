@@ -1,9 +1,9 @@
 <section *ngIf="!fechaSeleccionada" class="partidos__container-section" style="align-items: center;" >
     <div class="loader"></div>
     <br>
-    <h1 style="font-size: x-large;" >CARGANDO</h1>
+    <h1 style="font-size: x-large;" >CARGANDO PRÓXIMAS FECHAS ...</h1>
 </section>
-<h3 class="txt__subtitle" style="text-align: center;" >1er Campeonato de Fútbol - El descanso del inca</h3>
+<h3 class="txt__subtitle" style="text-align: center;" >1er Campeonato de Fútbol - El Descanso del Inca</h3>
 <section *ngIf="fechaSeleccionada" class="partidos__container-section">
     <div class="button__categoria-container">
         <div *ngFor="let categoria of arrayCategorias" class="button__categoria "
